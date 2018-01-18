@@ -18,17 +18,17 @@ class base{
 		}
 	}
 
-	public function urls($string){
+	protected function urls($string){
 		$array=explode('/',$string);
 		dump($array);exit;
 	}
 
-	public function url($array){
+	protected function url($array){
 
 		if(count($array)) return '?'.http_build_query($array);
 	}
 
-	public function Go($url) {
+	protected function Go($url) {
 
 		if(is_array($url)) $url=$this->array2url($url);
 
