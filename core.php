@@ -62,7 +62,7 @@ try{
 }
 
 
-$Nav=\core\Pool::ctrl_Method_Nav($ctrl,$method);#dump($Nav);exit;
+$Nav=\core\common::ctrl_Method_Nav($ctrl,$method);#dump($Nav);exit;
 
 ################加载视图VIEW##########
 

@@ -2,6 +2,26 @@
 
 class Common{
 
+	############################SEO######################
+	static public function ctrl_Method_Nav($ctrl,$method){
+		$db=new \core\DB;
+
+		$Nav = $db->get('nav',[
+			'title','back','state'
+		],[
+			'ctrl'=>$ctrl,'method'=>$method
+		]);
+
+		$Nav['title'] = $Nav['title'] ?? $ctrl.' > '.$method;
+
+		$back = $Nav['back'] ?? $ctrl;#dump($Nav);exit;
+
+		$Nav['back']='?'.$back;
+
+		return $Nav;
+	}
+	############################SEO######################
+
 	static public function avatarRemove($avatarDIR,$filename){
 
 		$avatarFile=UPLOAD.'/'.$avatarDIR.'/'.$filename;
