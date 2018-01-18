@@ -1,0 +1,10 @@
+<select onchange="javascript:location.href=this.value;">
+<option value="$urlbase&ready=$ready">金额</option>
+<!--{loop $kindConfig $key $text}-->
+<option value="$urlbase&kind=$key&ready=$ready"<!--{if $key==$kind}--> selected<!--{/if}-->>{$text}元</option>
+<!--{/loop}--></select>
+
+<select onchange="javascript:location.href=this.value;">
+<option value="$urlbase&kind=$kind&ready=0"<!--{if $ready==0}--> selected<!--{/if}-->>待返现</option>
+<option value="$urlbase&kind=$kind&ready=1"<!--{if $ready==1}--> selected<!--{/if}-->>已返现</option>
+</select>

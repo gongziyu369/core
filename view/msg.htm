@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>消息提示</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<style>
+*{margin:0;padding:0;word-break:break-all;}
+html{font-size:62.5%;}
+body{text-align: center;color:#666;font-size:1.2rem;line-height:3rem;}
+#FixBack{z-index:8;position:fixed;top:0%;left:0%;width:100%;height:100%;}
+#FixBack{opacity:0.8;filter:alpha(opacity=80);background-color:#FAF6DC;}
+
+#Center{z-index:999;position:fixed;/*OR fixed display:table;*/}
+#Center{margin:auto;top:0;right:0;bottom:0;left:0;display:table;
+	font-size:1.2em;line-height:200%;}
+#Center{width:70%;max-width:500px;}
+#Center{border:1px solid #E9CECE;box-shadow:0px 0px 15px rgba(7, 17, 27, 0.2);background:white;}
+
+dt{color:white;background:#ce4445;font-size:3rem;line-height:5rem;}
+dd{
+	display:flex;align-items:center;justify-content:center;
+	min-height:10rem;font-size:2rem;
+}
+a{text-decoration:none;color:#de1e7c;}
+</style>
+</head>
+<body>
+
+<div id="FixBack"></div>
+
+<div id="Center">
+	<dt>消息</dt>
+	<!--{if $timeout}--><script language="javascript">setTimeout("{$do}", $timeout);</script><!--{/if}-->
+	<dd>
+		<b>{$msg}</b>
+	</dd>
+	<p><a href="{$url}" class="blue">请点击跳转</a></p>
+	<!--<p><span class="red"><a href="/">返回</a></span></p>-->
+	<a href="#" onclick="javascript:window.close();"></a>
+</div>
+
+</body>
+</html>

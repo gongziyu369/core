@@ -1,0 +1,11 @@
+
+<a href="$urlbase">金额</a>
+<!--{loop $kindConfig $key $text}-->
+ <a href="$urlbase&kind=$key"<!--{if $key==$kind}--> marked<!--{/if}-->>{$text}元</a>
+<!--{/loop}-->
+
+<br>
+
+<a href="$urlbase">返现</a>
+<a href="$urlbase&kind=$kind&ready=0">待返现</a>
+<a href="$urlbase&kind=$kind&ready=1">已返现</a>

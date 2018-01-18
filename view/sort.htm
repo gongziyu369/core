@@ -1,0 +1,6 @@
+<select onchange="ajaxUpdate('$table','$primary','$mk','sort',this.value)">
+<option value="$Array[sort]">当前{$Array[sort]}</option>
+<!--{loop $sortConfig $sort $text}-->
+<option value="$sort"{if $sort==$Array[sort]} selected{/if}>{$sort}{$text}</option>
+<!--{/loop}-->
+</select>

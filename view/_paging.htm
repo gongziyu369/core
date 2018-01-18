@@ -1,0 +1,14 @@
+<!--{if $page>1}--><li><a href="$pagingbase">首页</a></li><!--{else}--><li>首页</li><!--{/if}-->
+
+<!--{if $prepage}--><li><a href="$pagingbase&page=$prepage">上一页</a></li><!--{/if}-->
+
+<!--{loop $pagelist $_page}-->
+	<!--{if $_page==$page}--><li><a class="marked">$_page</a></li>
+	<!--{else}--><li><a href="$pagingbase&page=$_page">$_page</a></li><!--{/if}-->
+<!--{/loop}-->
+
+<!--{if $nextpage<$pagecount}--><li><a href="$pagingbase&page=$nextpage">下一页</a></li><!--{/if}-->
+
+<!--{if $page==$pagecount}--><li>尾页</li><!--{else}--><li><a href="$pagingbase&page=$pagecount">尾页</a></li><!--{/if}-->
+
+<li>(共:{$count}条)</li>

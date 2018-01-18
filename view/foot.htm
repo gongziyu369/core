@@ -1,0 +1,31 @@
+<div ID="FOOT">
+    <p>深圳市乐享无忧科技有限公司 版权所有</p>
+    <p>2013-2016 &copy; All Rights Reserved.粤ICP备16061119号</p>
+</div>
+
+</div><!--zPage end-->
+</body>
+
+
+<div class="bottom1px" onMouseOver="FixedBottom.style.display='block';"></div>
+<div id="FixedBottom" class="tool">
+<div class="main">
+	<span style="float:left;padding-left:1em;"><a href="javascript:history.go(-1);"><-</a></span>
+	<!--{if $USERID}-->
+		<span><a title="$USERID" href="http://$HOST/index.php?client">会员</a></span>
+		<span><a href="http://$HOST/index.php?shop">商家</a></span><!--{if $SHOPID}--><!--{/if}-->
+		<span><a href="http://$HOST/index.php?queue&m=queuePublic">返现平台</a></span>
+	<!--{else}-->
+		<span><a href="http://$HOST/index.php?user&m=sign">注册</a></span>
+		<span><a href="http://$HOST/index.php?user&m=login">登录</a></span>
+	<!--{/if}-->
+	<span><a href="http://$HOST/index.php?user&m=logout" title="$USERID">退出</a></span>
+	<span style="float:right;padding-right:1em;"><a href="javascript:" onclick="FixedBottom.style.display='none';"><font color=gray>X</font></a></span>
+	<span id="result">$theajax</span><!--三秒后result消失 ###修改速度过快限制!!!-->
+</div>
+</div>
+
+<script language="javascript" src="http://$DOMAIN/$ui/ajax.js"></script>
+<script language="javascript" src="http://$DOMAIN/$ui/alert.js"></script>
+<!--{echo $ajaxResult;}-->
+</html>

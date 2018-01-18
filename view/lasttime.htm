@@ -1,0 +1,5 @@
+<select onchange="ajaxUpdate('$table','$primary','$mk','lasttime',this.value)" title="<!--{echo date('Y年m月d日H时i分',$Array[lasttime])}-->">
+<option value="0">无</option>
+<option value="<!--{echo time();}-->">设当前时间</option>
+<option value="$Array[lasttime]"<!--{if $Array[lasttime]}--> selected<!--{/if}-->><!--{echo date('m月d日H时i分',$Array[lasttime])}--></option>
+</select>

@@ -1,0 +1,14 @@
+<span><!--{if $Page[current]>1}--><a href="$Url['page']">首页</a><!--{else}-->首页<!--{/if}--></span>
+
+<!--{if $Page[prepage]}--><span><a href="$Url['page']&page=$Page['prepage']">上一页</a></span><!--{/if}-->
+
+<!--{loop $Page[pagelist] $_page}-->
+	<!--{if $_page==$Page[current]}--><span><a class="current">$_page</a></span>
+	<!--{else}--><span><a href="$Url['page']&page=$_page">$_page</a></span><!--{/if}-->
+<!--{/loop}-->
+
+<!--{if $Page[current]<$Page[pagecount]}--><span><a href="$Url['page']&page=$Page['nextpage']">下一页</a></span><!--{/if}-->
+
+<span><!--{if $Page[current]==$Page[pagecount]}-->尾页<!--{else}--><a href="$Url['page']&page=$Page['pagecount']">尾页</a><!--{/if}--></span>
+
+<span>(共 {$Page[count]}条 {$Page[pagecount]}页)</span>

@@ -1,0 +1,6 @@
+<select onchange="ajaxUpdate('$table','$primary','$mk','weight',this.value)">
+<option value="$Array[weight]">当前{$Array[weight]}</option>
+<!--{loop $weightConfig $weight $text}-->
+<option value="$weight"{if $weight==$Array[weight]} selected{/if}>{$weight}{$text}</option>
+<!--{/loop}-->
+</select>

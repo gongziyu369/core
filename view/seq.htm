@@ -1,0 +1,6 @@
+<select onchange="ajaxUpdate('$table','$primary','$mk','seq',this.value)">
+<option value="$Array[seq]">当前{$Array[seq]}</option>
+<!--{loop $seqConfig $seq $text}-->
+<option value="$seq"{if $seq==$Array[seq]} selected{/if}>{$text}</option>
+<!--{/loop}-->
+</select>
