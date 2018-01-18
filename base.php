@@ -18,6 +18,18 @@ class base{
 		}
 	}
 
+	public function __call($method,$arguments){#var_dump($arguments)
+
+		exit($method .'NO_AUTH_METHODby_ctrl_call');
+	}
+
+	public function __get($key){
+
+		exit($key .'NOT_EXISTS_by_ctrl_get');
+	}
+
+	#public function __destruct(){}
+
 	protected function urls($string){
 		$array=explode('/',$string);
 		dump($array);exit;
@@ -36,18 +48,6 @@ class base{
 
 		header("Location:{$url}");exit;
 	}
-
-	public function __call($method,$arguments){#var_dump($arguments)
-
-		exit($method .'NO_AUTH_METHODby_ctrl_call');
-	}
-
-	public function __get($key){
-
-		exit($key .'NOT_EXISTS_by_ctrl_get');
-	}
-
-	#public function __destruct(){}
 }
 
 /* public function newModel($ctrl){
