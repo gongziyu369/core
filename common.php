@@ -134,7 +134,7 @@ class Common{
 
 		$authcode = $cookie->authcode($_COOKIE[AUTHKEY], 'DECODE');
 
-		if(!$authcode) show('验证失败,请重新登录',$loginurl,'1');
+		if(!$authcode) msg('PLEASE_LOGIN',$loginurl,'1');
 
 		$_LIST = LIST($_USER,$_TIME,$_PASSWORD) = explode("\t", $authcode);#DUMP($_LIST);EXIT;
 
