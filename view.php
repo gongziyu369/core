@@ -4,7 +4,7 @@ class View{
 	private $suffix='.htm';
 
 	public function __construct($tpl){
-        $appSourceFile = APP.'/View/'.THEME.'/'.$tpl.$this->suffix;
+        $appSourceFile = APP.'/'.VIEW.'/'.THEME.'/'.$tpl.$this->suffix;
         $coreSourceFile = CORE.'/view/'.$tpl.$this->suffix;
 
         if(is_file($appSourceFile)) $this->sourceFile=$appSourceFile;

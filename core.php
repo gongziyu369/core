@@ -33,6 +33,7 @@ define('HTTPUSERAGENT',HTTPUSERAGENT());
 define('REFERER',$_SERVER['HTTP_REFERER'] ?? '/');
 define('AUTHCODE',md5('gongziyu'.$_SERVER['HTTP_USER_AGENT']));
 define('TIME',$_SERVER['REQUEST_TIME']);
+define('VIEW','View');
 #if($_SERVER['REQUEST_METHOD']=='POST') define('POST',true);
 
 #控制器变量 #方法变量
@@ -65,6 +66,7 @@ try{
 $Nav=\core\common::ctrl_Method_Nav($ctrl,$method);#dump($Nav);exit;
 
 ################加载视图VIEW##########
+$theme='http://'.HOST.'/'.VIEW.'/'.THEME;
 
 if($ctrl!=$method) $view=$view ?? $ctrl.ucfirst($method);
 
