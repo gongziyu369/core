@@ -2,10 +2,9 @@
 
 class View{
 	private $suffix='.htm';
-	private $style='default';
 
 	public function __construct($tpl){
-        $appSourceFile = APP.'/View/'.$tpl.$this->suffix;
+        $appSourceFile = APP.'/View/'.THEME.'/'.$tpl.$this->suffix;
         $coreSourceFile = CORE.'/view/'.$tpl.$this->suffix;
 
         if(is_file($appSourceFile)) $this->sourceFile=$appSourceFile;
@@ -14,7 +13,7 @@ class View{
 
         else exit('NO_VIEW_FILE:'.$tpl);
 
-	    $this->cacheFile=APP.'/../cache/'.HOST."/$tpl.php";
+	    $this->cacheFile=APP.'/../cache/'.HOST.'/'.THEME."/$tpl.php";
 
 		$dirname=dirname($this->cacheFile);
 

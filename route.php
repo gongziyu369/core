@@ -5,13 +5,12 @@ class Route {
 	public static $method;
 
 	static public function init(){
-		global $index;
 
 		$ctrl = key($_GET);#配置原型
 
 		if($ctrl) self::$ctrl = $ctrl;
 
-		else self::$ctrl = $index ?? 'index';
+		else self::$ctrl = INDEX ?? 'index';
 
 		$method = current($_GET);#配置方法#$method = $_GET[$ctrl];
 

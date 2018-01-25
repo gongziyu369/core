@@ -70,5 +70,5 @@ if($ctrl!=$method) $view=$view ?? $ctrl.ucfirst($method);
 
 $viewConfig=config('view');extract($viewConfig);#使用GLOBAL来获取配置变量
 
-include view($view ?? $method);#include view($view ?? $ctrl.$method);
+include view($view ?? $method);
 #WE::run();
