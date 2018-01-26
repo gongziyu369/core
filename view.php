@@ -29,7 +29,7 @@ class View{
 	    } else if(@filemtime($this->sourceFile)>@filemtime($this->cacheFile) ){
 
 	    	return true;#智能更新
-	    	
+
 	    } else {
 
 	    	return false;#手动更新

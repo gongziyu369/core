@@ -66,11 +66,15 @@ try{
 $Nav=\core\common::ctrl_Method_Nav($ctrl,$method);#dump($Nav);exit;
 
 ################加载视图VIEW##########
+$viewConfig=config('view');extract($viewConfig);#使用GLOBAL来获取配置变量
+
+$themeValue=defined('ADMIN') ? $theme['admin'] : $theme['user'];
+
+define('THEME',$themeValue);
+
 $theme='http://'.HOST.'/'.VIEW.'/'.THEME;
 
 if($ctrl!=$method) $view=$view ?? $ctrl.ucfirst($method);
-
-$viewConfig=config('view');extract($viewConfig);#使用GLOBAL来获取配置变量
 
 include view($view ?? $method);
 #WE::run();
