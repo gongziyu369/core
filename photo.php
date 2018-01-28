@@ -2,7 +2,7 @@
 
 class Photo{
 	public $quality='80';
-	public $width_max='500';
+	public $width_max='800';
 	#public $height_max='500';
 
 	/**

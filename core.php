@@ -42,6 +42,11 @@ LIST($ctrl,$method)=Route::init();#加载URL路由选择器
 $APP_INCLUDE=APP.'/include/include.php';
 if(file_exists($APP_INCLUDE)) include($APP_INCLUDE);
 
+################加载视图VIEW##########
+$viewConfig=config('view');extract($viewConfig);#使用GLOBAL来获取配置变量
+$themeValue=defined('ADMIN') ? $theme['admin'] : $theme['user'];
+define('THEME',$themeValue);
+
 #$define=config('define');extract($define);#使用GLOBAL来获取配置变量
 
 try{
@@ -66,11 +71,6 @@ try{
 $Nav=\core\common::ctrl_Method_Nav($ctrl,$method);#dump($Nav);exit;
 
 ################加载视图VIEW##########
-$viewConfig=config('view');extract($viewConfig);#使用GLOBAL来获取配置变量
-
-$themeValue=defined('ADMIN') ? $theme['admin'] : $theme['user'];
-
-define('THEME',$themeValue);
 
 $theme='http://'.HOST.'/'.VIEW.'/'.THEME;
 
